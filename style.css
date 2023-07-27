@@ -13,6 +13,8 @@
     border: none;
     text-decoration: none;
     transition: all 0.2s linear;
+    /* background-color: rgba(0, 100, 0, 0.2); */
+    /* overflow-x: hidden; */
 }
 
 *::selection{
@@ -25,6 +27,13 @@ html{
     overflow-x: hidden;
     scroll-padding-top: 6rem;
     scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 .section{
@@ -34,6 +43,7 @@ html{
 .heading{
     text-align: center;
     padding: 2.5rem 0;
+    /* width: 100vw; */
 }
 
 .heading span{
@@ -73,6 +83,7 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 2rem 9%;
+    width: 100vw;
 }
 
 header .logo{
@@ -124,7 +135,7 @@ header .search-bar-container.active{
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 header .search-bar-container #search-bar{
-    width: 100%;
+    /* width: 100%; */
     padding: 1rem;
     text-transform: none;
     color: #333;
@@ -237,6 +248,7 @@ header .search-bar-container label:hover{
     padding: .5rem 1.2rem;
     cursor: pointer;
     display: none;
+    /* width: 100%; */
 }
 
 .home{
@@ -562,6 +574,7 @@ header .search-bar-container label:hover{
 
 #brand{
         display: flex;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         gap:10rem;
@@ -647,8 +660,13 @@ body{
 
 @media(max-width:830px)
 {
+    body{
+        display: flex;
+        flex-direction: column;
+    }
     #menu-bar{
-        display: initial;
+        display: flex;
+        flex-direction: row;
     }
 
     .book .row form{
@@ -657,14 +675,18 @@ body{
 
     header .navbar{
         position: absolute;
-        top: 100%; right: 0;left: 0;
+        display: inline-block;
+        top: 100%; 
+        right: 0;
+        left: 0; 
         background: #333;
         border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
         padding: 1rem 2rem;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        overflow: hidden;
     }
 
-    header .navbar.active{
+    header .navbar.active{ 
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
@@ -674,6 +696,15 @@ body{
         padding: 1.3rem;
         margin: 1.3rem 0;
         background: #222;
+    }
+
+    #brand{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* width: 50%; */
+        gap:5rem;
     }
 }
 
@@ -685,11 +716,18 @@ body{
     .heading span{
         font-size:2.5rem ;
     }
-    .book .row .image img{
+    /* .book .row .image img{
         margin-right: -10rem;
-    }
+    } */
 
     .contact .row form .inputBox input{
         width: 100%;
     }
+    #brand{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* width: 50%; */
+        gap:5rem;
 }
